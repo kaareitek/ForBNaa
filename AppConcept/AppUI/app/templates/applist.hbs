@@ -1,0 +1,28 @@
+{{page-title "Applist"}}
+<link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css">
+<link integrity="" rel="stylesheet" href="{{rootURL}}assets/emberjs-lol.css">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+<script src="{{rootURL}}assets/vendor.js"></script>
+<script src="{{rootURL}}assets/emberjs-lol.js"></script>
+{{api-layout}}
+
+
+
+<div class="apicenter-col">
+    <div class="appwrapper-flex" style="font-family: 'Segoe UI'">
+        <div class="appcontainer">
+            <div class='appbanner-img'>
+                <LinkTo @route="upload"><img class="addAppImage"
+                        src="assets/images/png/plus-icon-101978b7b3e0c656c709883af3b299d2.png"></LinkTo>
+            </div>
+        </div>
+        {{#each model as |app|}}
+        {{app-preview app=app}}
+        {{/each}}
+    </div>
+    <a href="applist/2">{{fa-icon "angle-right" class="niceicon"}}</a>
+</div>
+
+{{api-footer}}

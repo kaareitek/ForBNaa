@@ -1,0 +1,47 @@
+<div class="apiheader">
+      <div class="apiheadercontainer">
+        <div class="uploadnav">
+              <LinkTo @route="applist" style="color:#ace000">My Apps</LinkTo>
+        </div>
+          <div class="apinavbar">
+              <LinkTo @route="about">About</LinkTo>
+               <div class="dropdown">
+                <button class="dropbtn">Documentation
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="doc1">Link 1</a>
+                <a href="doc2">Link 2</a>
+                <a href="doc3">Link 3</a>
+              </div>
+            </div>
+              <div class="dropdown">
+                <button class="dropbtn">Tutorials
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="tut1">Link 1</a>
+                <a href="tut2">Link 2</a>
+                <a href="tut3">Link 3</a>
+              </div>
+            </div>
+              <LinkTo @route="comm1">Community</LinkTo>
+              <LinkTo @route="changelog">Changelog</LinkTo>
+              <LinkTo @route="help">Help</LinkTo>     
+          </div>
+            
+            <a href="http://localhost:4200/"><img src="assets/images/qplaylogo-0e6a47c6b4fb53547db99dfaa59ef1fa.png" style="position: absolute; top: 0; right: 0; margin-top: 20px; margin-right: 7px; width: 150px;"></a>
+            </div>
+        </div>
+
+<div class="apileft-col">
+        <a href="notify">{{fa-icon "bell" class="iconmain"}}</a>
+        <a href="useraccount">{{fa-icon "user" class="iconmain"}}</a>
+        <a href="search">{{fa-icon "search" class="iconmain"}}</a>
+        <a href="help">{{fa-icon "question" class="iconmain"}}</a>  
+</div>
+    
+         
+ 
+
+{{yield}}

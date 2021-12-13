@@ -1,0 +1,4 @@
+Serializers manipulate the incoming data from the back-end API. For this project, care has been
+taken to make sure that the back-end adheres to one of Ember's built in Serializers.
+Serializers are completely customizable, but it is recommended to simply feed Ember the proper
+data formatting from the back-end. More can be read at https://guides.emberjs.com/release/models/customizing-serializers/

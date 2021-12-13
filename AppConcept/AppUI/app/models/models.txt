@@ -1,0 +1,3 @@
+Models, as the name states, are objects used to define data objects in Ember. Instead of offering
+a lengthy explanation, it is heavily encourage to thoroughly read the entire section on 
+Ember Data found at https://guides.emberjs.com/release/models/

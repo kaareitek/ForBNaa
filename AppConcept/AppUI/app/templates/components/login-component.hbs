@@ -1,0 +1,32 @@
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+    <div class="wrapper" id="login">
+      <a href="/">{{fa-icon "times" class="close-btn" id="close"}}</a>
+      <div class="title">Login Form</div>
+        <form name="Form" {{action 'authenticate' on='submit'}}>
+            <div class="field" style="width: 93%">
+              {{input type="text" value=username}}
+              <label>Email Address or Username</label>
+            </div>
+            <div class="field" style="width: 93%">
+              {{input type="password" value=password}}
+              <label>Password</label>
+            </div>
+          <div class="content">
+            <div class="checkbox">
+              <input type="checkbox" id="remember-me">
+              <label for="remember-me">Remember me</label>
+            </div>
+            <div class="pass-link">
+              <a href="#">Forgot password?</a></div>
+            </div>
+            <div class="field">
+              <input type="submit" value="Login">
+            </div>
+            <div class="signup-link">
+              Not a member? <a href="#">Sign up now</a></div> 
+        </form>
+      </div>
+    
+

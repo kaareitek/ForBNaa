@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <link rel="stylesheet" href="style.css">
+
+    <body>
+     <iframe height="700px" width="700px" src="" id="appFrame"></iframe>
+     <div id="options">Options here
+      <select id="purchasedApps"></select>
+      <button type="button" onclick="show()">Select</button>
+      <button id="option-element0" value="toggle">Toggle Button!!!</button>
+     </div>
+     <div id="main"></div>
+     <div id="apps">Apps here
+      <script type="module" src="scripts/marketplace.js">
+      </script>
+      <div id="loginContainer">
+      <button type="button" onclick="login()" id="login">Login</button>
+      </div>
+      <select id="appList"></select>
+      <button type="button" onclick="buy()" id="buy">Buy app</button>
+     </div>
+
+    </body>
+</html>
+<script>
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+}
+
+async function login() {
+  const loginBody = JSON.stringify({
+    "username": "barbora",
+    "password": "goodpw123"
+  });
+
+  console.log(loginBody);
+
+  const response = await fetch("http://localhost:3000/loginCustomer", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    }, 
+    body: loginBody
+  }).then(res => res.json()).then(response => {
+    console.log(response);
+    document.cookie = "id=" + response.id;
+    document.cookie = "token=" + response.accessToken;
+    console.log(document.cookie);
+    getPurchasedApps();
+  })
+}
+
+async function buy() {
+  let selectedApp = document.getElementById("appList");
+  let id = sessionStorage.getItem(selectedApp.options[selectedApp.selectedIndex].value);
+  let timestamp = new Date().toLocaleString;
+
+
+  const response = await fetch("http://localhost:3000/transactions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer " + getCookie("token")
+    },
+    body: JSON.stringify({
+      "appid": id,
+      "appname": selectedApp.options[selectedApp.selectedIndex].value,
+      "customerid": getCookie("id"),
+      "timeofpurchase": timestamp
+    })
+  })
+
+  getPurchasedApps();
+}
+
+async function getPurchasedApps() {
+  document.getElementById("purchasedApps").innerHTML = null;
+
+  const response = await fetch("http://localhost:3000/transactions/" + getCookie("id"), {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer " + getCookie("token")
+    }
+    }).then(res => res.json()).then(response => {
+      console.log(response);
+      for (let i = 0; i < response.length; i++) {
+        let app = document.createElement("OPTION");
+        document.getElementById("purchasedApps").appendChild(app);
+
+        app.innerHTML += response[i].appname;
+        sessionStorage.setItem("owned " + response[i].appname, response[i].appid);
+      }
+    })
+  }
+
+function show() {
+  let selectedApp = document.getElementById("appList");
+  let appurl = sessionStorage.getItem("url " + selectedApp.options[selectedApp.selectedIndex].value);
+
+  document.getElementById("appFrame").src = "http://" + appurl;
+}
+
+let btn = document.getElementById("option-element0");
+
+btn.addEventListener("click", () => {
+
+  document.getElementById("appFrame").src = document.getElementById("appFrame").src + btn.value;
+})
+
+</script>

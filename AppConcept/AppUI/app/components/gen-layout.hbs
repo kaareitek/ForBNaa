@@ -1,0 +1,52 @@
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<div class="header">
+      <div class="headercontainer">
+        <div class="navbar">
+          <LinkTo @route="about">About</LinkTo>
+            <div class="dropdown">
+              <button class="dropbtn">Tutorials
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="tut1">Link 1</a>
+                <a href="tut2">Link 2</a>
+                <a href="tut3">Link 3</a>
+              </div>
+            </div>
+            <div class="dropdown">
+              <button class="dropbtn">Documentation
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="doc1">Link 1</a>
+                <a href="doc2">Link 2</a>
+                <a href="doc3">Link 3</a>
+              </div>
+            </div>
+            <div class="dropdown">
+              <button class="dropbtn">Community
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="comm1">Link 1</a>
+                <a href="comm2">Link 2</a>
+                <a href="comm3">Link 3</a>
+              </div>
+            </div>
+            <div class="navbar">
+              <a href="changelog">Changelog</a>
+              </div>
+            </div>
+          </div>
+          <div class="signUpContainer">
+            <a href= "signup"><button class="signUpButton">Sign Up</button></a>
+          </div>
+          <div class="img">
+            <a href="/"><img src="assets/images/q-play.jpg" width="200"></a>
+          </div>
+          <div class="login">
+            <a href="login">Log In</a>
+          </div>
+</div>
+
+{{yield}}

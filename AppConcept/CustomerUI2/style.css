@@ -1,0 +1,35 @@
+#options {
+    border-style: solid;
+    border-width: 1 px;
+    width: 49%;
+    height: 49vh;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+#main {
+    border-style: solid;
+    border-width: 1 px;
+    width: 49%;
+    height: 98vh;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+#apps {
+    border-style: solid;
+    border-width: 1 px;
+    width: 49%;
+    height: 49vh;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+
+#loginContainer {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}

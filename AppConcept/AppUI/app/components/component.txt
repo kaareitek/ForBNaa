@@ -1,0 +1,8 @@
+Components are simply reusable UI elements. Components exist in 2 types: With and without JavaScript.
+If the component has no JavaScript it going in the component folder. If it does, place the
+.hbs in the component sub-folder under templates, and the corresponding .js file in the 
+component folder. Components can be placed in the code in the standard Ember way, using the 
+{{component-name}} syntax.
+
+IMPORTANT: Components MUST include a hyphen (-). This is an Ember convention, and they will
+fail to include without warning if ommited.

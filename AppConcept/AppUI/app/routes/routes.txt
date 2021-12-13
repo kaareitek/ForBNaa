@@ -1,0 +1,3 @@
+Each in the app will have a corresponding route. Routes are where you will load the model data 
+to be used in templates or components. Routes are a comprehensive subject, so it is strongly
+recommended you read the official documentation on routing at https://guides.emberjs.com/release/routing/

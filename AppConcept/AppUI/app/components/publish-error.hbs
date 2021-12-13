@@ -1,0 +1,19 @@
+<div class="alert_wrapper">
+    <div class="alert_backdrop"></div>
+    <div class="alert_inner">
+        <div class="alert_item alert_error" id="error">
+            <div class="icon data_icon">
+                {{fa-icon "exclamation-triangle"}}
+            </div>
+            <div class="data">
+                <p class="title"><span>Error: The app couldn't be sent for review</span></p>
+                <p class="sub">Please contact the customer support</p>
+            </div>
+            <div class="icon close">
+                {{fa-icon "times"}}
+            </div>
+        </div>
+    </div>
+</div>
+
+{{yield}}

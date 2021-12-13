@@ -1,0 +1,97 @@
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+</style>
+<div class="modal1-bg">
+  <div class="modal1">
+    <div class="wrapper1">
+      <!--Wrapper is just the gradient header (not anymore, now it covers the entire modal)-->
+      <a href="applist">{{fa-icon "times" class="close-btn" id="close"}}</a>
+      <div class="title" style="margin-bottom: 80px;">
+        Upload an App</div>
+      <div class="upcontainer">
+        <div class="wrapper">
+          <!--Wrapper for image upload box-->
+          <div class="image">
+            <img src="" style="text-indent: -10000px; z-index: 2;" id="uploadedimage">
+          </div>
+          <div class="content" style="z-index: 1;">
+            {{fa-icon "cloud-upload" class="icon"}}
+          </div>
+          <div id="cancel-btn" style="z-index: 3;">
+            {{fa-icon "times" class="cancel-btn"}}</div>
+          <div class="file-name" style="z-index: 3;"></div>
+        </div>
+        <button onclick="defaultBtnActive()" id="custom-btn" style="margin-top: 20px; margin-bottom: 20px;">Choose a logo</button>
+        <input id="default-btn" type="file" onchange={{action "saveImage"}} hidden>
+      </div>
+      <form {{action 'createApp' on='submit'}}>
+        <div class="field" style="margin-top: 0">
+          {{input type="text" value=appname required=true maxlength=20}}
+          <label>App Name</label>
+        </div>
+        <div class="field">
+          {{input type="text" value=appurl required=true}}
+          <label>App URL</label>
+        </div>
+        <div class="field">
+          <input type="submit" value="Upload">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  function addapp() {
+    this.render("components/previewapp", {
+      into: "applist",
+      outlet: "applist"
+    });
+
+  }
+  const wrapper = document.querySelector(".wrapper");
+  const fileName = document.querySelector(".file-name");
+  const defaultBtn = document.querySelector("#default-btn");
+  const customBtn = document.querySelector("#custom-btn");
+  const cancelBtn = document.querySelector("#cancel-btn i");
+  const img = document.querySelector("#uploadedimage");
+  let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+  function defaultBtnActive() {
+    defaultBtn.click();
+  }
+  defaultBtn.addEventListener("change", function () {
+    const file = this.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function () {
+        const result = reader.result;
+        img.src = result;
+        wrapper.classList.add("active");
+      }
+      cancelBtn.addEventListener("click", function () {
+        img.src = "";
+        wrapper.classList.remove("active");
+      })
+      reader.readAsDataURL(file);
+    }
+    if (this.value) {
+      let valueStore = this.value.match(regExp);
+      fileName.textContent = valueStore;
+    }
+  });
+
+
+
+
+</script>
+
+
+
+
+{{yield}}

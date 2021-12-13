@@ -1,0 +1,578 @@
+{
+  "messageDate": "2018-11-28T10:40:52Z",
+  "messageFunction": "Instruction",
+  "messageId": "msg-182721551",
+  "application": {
+    "applicationId": 2001,
+    "name": "PostNord Online Shipping Tool",
+    "version": "1.0"
+  },
+  "language": "EN",
+  "updateIndicator": "Original",
+  "testIndicator": false,
+  "shipment": [
+    {
+      "shipmentIdentification": {
+        "shipmentId": "00373500489530470000"
+      },
+      "dateAndTimes": {
+        "loadingDate": "2017-11-24T10:40:52Z",
+        "earliestDeliveryDate": "2017-11-24T10:40:52Z",
+        "latestDeliveryDate": "2017-11-24T10:40:52Z",
+        "earliestPickupDate": "2017-11-24T10:40:52Z"
+      },
+      "service": {
+        "basicServiceCode": "19",
+        "additionalServiceCode": [
+          "A1"
+        ]
+      },
+      "cashOnDelivery": {
+        "transactionIdentifier": "070004453904",
+        "codType": "BANKRECEIPT",
+        "codAmount": {
+          "amount": 20,
+          "currency": "SEK"
+        }
+      },
+      "insurance": {
+        "typeOfInsurance": "EUROPE",
+        "insuranceAmount": {
+          "amount": 20,
+          "currency": "SEK"
+        }
+      },
+      "goodsValue": {
+        "amount": 20,
+        "currency": "SEK"
+      },
+      "freeText": [
+        {
+          "usageCode": "DEL",
+          "text": "Sign on glass required"
+        }
+      ],
+      "numberOfPackages": {
+        "value": 5
+      },
+      "numberOfPalletFootPrints": {
+        "value": 5
+      },
+      "totalGrossWeight": {
+        "value": 5,
+        "unit": "KGM"
+      },
+      "totalVolume": {
+        "value": 2,
+        "unit": "MTQ"
+      },
+      "loadingMetres": {
+        "value": 5,
+        "unit": "MTR"
+      },
+      "termsOfDelivery": {
+        "todConditionCode": "DDP",
+        "todConditionCodeList": "string",
+        "todLocation": "CIP Stavanger"
+      },
+      "references": [
+        {
+          "referenceNo": "ref-12121A",
+          "referenceType": "CU"
+        }
+      ],
+      "transportLeg": {
+        "transportLegType": "MAINTRANSPORT",
+        "transportLegId": "S/S FRYD",
+        "meansOfTransport": {
+          "meansOfTransportId": "KNP123",
+          "name": "S/S FRYD",
+          "meansOfTransportType": "1",
+          "countryCode": "SE"
+        },
+        "location": {
+          "startLocation": {
+            "locationId": "0037",
+            "locationIdType": "DPD"
+          },
+          "endLocation": {
+            "locationId": "0037",
+            "locationIdType": "DPD"
+          },
+          "routing": {
+            "locationId": "0037",
+            "locationIdType": "DPD"
+          }
+        }
+      },
+      "parties": {
+        "consignor": {
+          "issuerCode": "Z11",
+          "partyIdentification": {
+            "partyId": "1234567890",
+            "partyIdType": "160"
+          },
+          "party": {
+            "nameIdentification": {
+              "name": "Nils Andersson",
+              "companyName": "PostNord AB",
+              "careOfName": "Karl Svensson"
+            },
+            "address": {
+              "streets": [
+                "Engelbrekts väg 110B"
+              ],
+              "postalCode": "19162",
+              "placeName": "string",
+              "state": "string",
+              "city": "Sollentuna",
+              "countryCode": "SE"
+            },
+            "contact": {
+              "contactName": "Nils Andersson",
+              "emailAddress": "me@postnord.com",
+              "phoneNo": "+4685586363",
+              "smsNo": "+467052555"
+            }
+          },
+          "references": {
+            "shipment": [
+              {
+                "referenceNo": "ref-12121A",
+                "referenceType": "CU"
+              }
+            ],
+            "item": [
+              {
+                "referenceNo": "ref-12121A",
+                "referenceType": "CU"
+              }
+            ]
+          },
+          "account": {
+            "accountNo": "7bbb-aaaaaaa",
+            "bankName": "ADE",
+            "swiftCode": "SWEDSESS"
+          }
+        },
+        "consignee": {
+          "issuerCode": "Z11",
+          "partyIdentification": {
+            "partyId": "1234567890",
+            "partyIdType": "160"
+          },
+          "party": {
+            "nameIdentification": {
+              "name": "Nils Andersson",
+              "companyName": "PostNord AB",
+              "careOfName": "Karl Svensson"
+            },
+            "address": {
+              "streets": [
+                "Engelbrekts väg 110B"
+              ],
+              "postalCode": "19162",
+              "placeName": "string",
+              "state": "string",
+              "city": "Sollentuna",
+              "countryCode": "SE"
+            },
+            "contact": {
+              "contactName": "Nils Andersson",
+              "emailAddress": "me@postnord.com",
+              "phoneNo": "+4685586363",
+              "smsNo": "+467052555"
+            }
+          },
+          "reference": {
+            "referenceNo": "ref-12121A",
+            "referenceType": "CU"
+          },
+          "account": {
+            "accountNo": "7bbb-aaaaaaa",
+            "bankName": "ADE"
+          }
+        },
+        "deliveryParty": {
+          "partyIdentification": {
+            "partyId": "1234567890",
+            "partyIdType": "160"
+          },
+          "party": {
+            "nameIdentification": {
+              "name": "Nils Andersson",
+              "companyName": "PostNord AB",
+              "careOfName": "Karl Svensson"
+            },
+            "address": {
+              "streets": [
+                "Engelbrekts väg 110B"
+              ],
+              "postalCode": "19162",
+              "placeName": "string",
+              "state": "string",
+              "city": "Sollentuna",
+              "countryCode": "SE"
+            },
+            "contact": {
+              "contactName": "Nils Andersson",
+              "emailAddress": "me@postnord.com",
+              "phoneNo": "+4685586363",
+              "smsNo": "+467052555"
+            }
+          }
+        },
+        "freightPayer": {
+          "issuerCode": "Z11",
+          "partyIdentification": {
+            "partyId": "1234567890",
+            "partyIdType": "160"
+          },
+          "party": {
+            "nameIdentification": {
+              "name": "Nils Andersson",
+              "companyName": "PostNord AB",
+              "careOfName": "Karl Svensson"
+            },
+            "address": {
+              "streets": [
+                "Engelbrekts väg 110B"
+              ],
+              "postalCode": "19162",
+              "placeName": "string",
+              "state": "string",
+              "city": "Sollentuna",
+              "countryCode": "SE"
+            },
+            "contact": {
+              "contactName": "Nils Andersson",
+              "emailAddress": "me@postnord.com",
+              "phoneNo": "+4685586363",
+              "smsNo": "+467052555"
+            }
+          }
+        },
+        "pickupParty": {
+          "party": {
+            "nameIdentification": {
+              "name": "Nils Andersson",
+              "companyName": "PostNord AB",
+              "careOfName": "Karl Svensson"
+            },
+            "address": {
+              "streets": [
+                "Engelbrekts väg 110B"
+              ],
+              "postalCode": "19162",
+              "placeName": "string",
+              "state": "string",
+              "city": "Sollentuna",
+              "countryCode": "SE"
+            },
+            "contact": {
+              "contactName": "Nils Andersson",
+              "emailAddress": "me@postnord.com",
+              "phoneNo": "+4685586363",
+              "smsNo": "+467052555"
+            }
+          },
+          "references": {
+            "shipment": [
+              {
+                "referenceNo": "ref-12121A",
+                "referenceType": "CU"
+              }
+            ],
+            "item": [
+              {
+                "referenceNo": "ref-12121A",
+                "referenceType": "CU"
+              }
+            ]
+          }
+        },
+        "originalShipper": {
+          "partyIdentification": {
+            "partyId": "1234567890",
+            "partyIdType": "160"
+          },
+          "party": {
+            "nameIdentification": {
+              "name": "Nils Andersson",
+              "companyName": "PostNord AB",
+              "careOfName": "Karl Svensson"
+            },
+            "address": {
+              "streets": [
+                "Engelbrekts väg 110B"
+              ],
+              "postalCode": "19162",
+              "placeName": "string",
+              "state": "string",
+              "city": "Sollentuna",
+              "countryCode": "SE"
+            },
+            "contact": {
+              "contactName": "Nils Andersson",
+              "emailAddress": "me@postnord.com",
+              "phoneNo": "+4685586363",
+              "smsNo": "+467052555"
+            }
+          },
+          "references": {
+            "shipment": [
+              {
+                "referenceNo": "ref-12121A",
+                "referenceType": "CU"
+              }
+            ],
+            "item": [
+              {
+                "referenceNo": "ref-12121A",
+                "referenceType": "CU"
+              }
+            ]
+          },
+          "account": {
+            "accountNo": "7bbb-aaaaaaa",
+            "bankName": "ADE",
+            "swiftCode": "SWEDSESS"
+          }
+        },
+        "notifyParty": {
+          "party": {
+            "nameIdentification": {
+              "name": "Nils Andersson",
+              "companyName": "PostNord AB",
+              "careOfName": "Karl Svensson"
+            },
+            "address": {
+              "streets": [
+                "Engelbrekts väg 110B"
+              ],
+              "postalCode": "19162",
+              "placeName": "string",
+              "state": "string",
+              "city": "Sollentuna",
+              "countryCode": "SE"
+            },
+            "contact": {
+              "contactName": "Nils Andersson",
+              "emailAddress": "me@postnord.com",
+              "phoneNo": "+4685586363",
+              "smsNo": "+467052555"
+            }
+          }
+        },
+        "returnParty": {
+          "party": {
+            "nameIdentification": {
+              "name": "Nils Andersson",
+              "companyName": "PostNord AB",
+              "careOfName": "Karl Svensson"
+            },
+            "address": {
+              "streets": [
+                "Engelbrekts väg 110B"
+              ],
+              "postalCode": "19162",
+              "placeName": "string",
+              "state": "string",
+              "city": "Sollentuna",
+              "countryCode": "SE"
+            },
+            "contact": {
+              "contactName": "Nils Andersson",
+              "emailAddress": "me@postnord.com",
+              "phoneNo": "+4685586363",
+              "smsNo": "+467052555"
+            }
+          }
+        }
+      },
+      "goodsItem": [
+        {
+          "marking": "marking label on the goods",
+          "goodsDescription": "Car parts",
+          "temperature": {
+            "idealTemperature": {
+              "value": 0,
+              "unit": "string"
+            },
+            "minTemperature": {
+              "value": 0,
+              "unit": "string"
+            },
+            "maxTemperature": {
+              "value": 0,
+              "unit": "string"
+            }
+          },
+          "dangerousGoods": {
+            "UNNo": 1891,
+            "hazardIdentificationCode": "6.1",
+            "additionalHazardClassificationIdentifier": "B4",
+            "packingGroup": "II",
+            "tunnelCode": "(D/E)",
+            "technicalNameNos": "Etylbromid",
+            "netWeight": {
+              "value": 0,
+              "unit": "string"
+            },
+            "grossWeight": {
+              "value": 0,
+              "unit": "string"
+            }
+          },
+          "packageTypeCode": "PC",
+          "items": [
+            {
+              "itemIdentification": {
+                "itemId": "00373500489530470000",
+                "itemIdType": "SSCC"
+              },
+              "references": [
+                {
+                  "referenceNo": "ref-12121A",
+                  "referenceType": "CU"
+                }
+              ],
+              "dimensions": {
+                "height": {
+                  "value": 25,
+                  "unit": "CMT"
+                },
+                "width": {
+                  "value": 45,
+                  "unit": "CMT"
+                },
+                "length": {
+                  "value": 15,
+                  "unit": "CMT"
+                }
+              },
+              "grossWeight": {
+                "value": 5,
+                "unit": "KGM"
+              },
+              "volume": {
+                "value": 2,
+                "unit": "MTQ"
+              }
+            }
+          ]
+        }
+      ],
+      "equipment": [
+        {
+          "equipmentType": "EFP",
+          "equipmentId": "string",
+          "noOfUnits": {
+            "value": 5
+          },
+          "seals": [
+            {
+              "sealId": "123",
+              "partyId": "string"
+            }
+          ]
+        }
+      ],
+      "customsDeclarationCN22": {
+        "EORIorPersonalIdNumber": "SE5561234711",
+        "hsTariffNumber": [
+          "910121"
+        ],
+        "categoryOfItem": {
+          "categoryType": [
+            "GIFT"
+          ],
+          "explanation": "string"
+        },
+        "detailedDescription": [
+          {
+            "content": "Cotton shirt",
+            "quantity": {
+              "value": 5
+            },
+            "grossWeight": {
+              "value": 5,
+              "unit": "KGM"
+            },
+            "value": {
+              "amount": 20,
+              "currency": "SEK"
+            }
+          }
+        ],
+        "totalGrossWeight": {
+          "value": 5,
+          "unit": "KGM"
+        },
+        "totalValue": {
+          "amount": 20,
+          "currency": "SEK"
+        }
+      },
+      "customsDeclarationCN23": {
+        "EORIorPersonalIdNumber": "SE5561234711",
+        "categoryOfItem": {
+          "categoryType": [
+            "GIFT"
+          ],
+          "explanation": "string"
+        },
+        "detailedDescription": [
+          {
+            "content": "Cotton shirt",
+            "quantity": {
+              "value": 5
+            },
+            "grossWeight": {
+              "value": 5,
+              "unit": "KGM"
+            },
+            "value": {
+              "amount": 20,
+              "currency": "SEK"
+            }
+          }
+        ],
+        "totalGrossWeight": {
+          "value": 5,
+          "unit": "KGM"
+        },
+        "totalValue": {
+          "amount": 20,
+          "currency": "SEK"
+        },
+        "itemIds": [
+          "00373500489530470000"
+        ],
+        "senderCustomsReferenceId": "12345678",
+        "importerReference": "1234-customs-ref",
+        "importerContactInfo": "+46070775589",
+        "commercialItems": [
+          {
+            "hsTariffNumber": "910121",
+            "countryCode": "SE"
+          }
+        ],
+        "quarantineComments": [
+          {
+            "comments": "comments",
+            "licenceNumber": "licenceNumber",
+            "certificateNumber": "certificateNumber",
+            "invoiceNumber": "invoiceNumber"
+          }
+        ],
+        "officeOfOrigin": "Nils Andersson",
+        "dateOfPosting": "2017-11-24T10:40:52Z",
+        "postalCharges": {
+          "amount": 20,
+          "currency": "SEK"
+        }
+      }
+    }
+  ]
+}

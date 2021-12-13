@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+
+    <div id="posdiv" style="position: absolute; top: 50px; right: 50px;">
+        Positions:
+        {% if pos %}
+        {% for p in pos %}
+
+        <p>{{ p.position }}</p>
+
+        {% endfor %}
+        {% endif %}
+    </div>
+
+    <div id="mapdiv" style="height: 400px; width: 20%; position: absolute; left: 500px"></div>
+    <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+    <script>
+        var long = [];
+        var lat = [];
+        var nodes = posdiv.querySelectorAll("p");
+
+        for (var i = 0; i < nodes.length; i++)
+        {
+            long.push(nodes[i].innerHTML.split(',')[0]);
+            lat.push(nodes[i].innerHTML.split(',')[1]);
+        }
+
+        map = new OpenLayers.Map("mapdiv");
+        map.addLayer(new OpenLayers.Layer.OSM());
+
+        var lonLat;
+        var zoom = 16;
+
+        var markers = new OpenLayers.Layer.Markers("Markers");
+        map.addLayer(markers);
+
+        for (var i = 0; i < nodes.length; i++)
+        {
+            lonLat = new OpenLayers.LonLat(parseFloat(lat[i]), parseFloat(long[i]))
+                .transform(
+                    new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                    map.getProjectionObject() // to Spherical Mercator Projection
+                );
+
+            markers.addMarker(new OpenLayers.Marker(lonLat));
+        }
+
+        map.setCenter(lonLat, zoom);
+    </script>
+
+    <div style="position: absolute; bottom: 50px; left: 50px">
+        Comments:
+        {% if com %}
+        {% for c in com %}
+
+        <p>{{ c.comment }}</p>
+
+        {% endfor %}
+        {% endif %}
+    </div>
+
+    <div style="position: absolute; bottom: 50px; right: 50px">
+        <form action="/addComment" method="post">
+            <input id="comment" name="comment" />
+            <input type="submit" value="submit" />
+        </form>
+    </div>
+
+    <div style="position: absolute; top: 50px; left: 50px;">
+        Temperatures:
+        {% if temp %}
+        {% for t in temp %}
+
+        <p>{{ t.temperature }}>{{ t.timestamp }}</p>
+
+        {% endfor %}
+        {% endif %}
+    </div>
+</body>
+</html>

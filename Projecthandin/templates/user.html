@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form action="/session" method="post">
+        <select id="sessions" name="session">
+            {% if res %}
+            {% for temp in res %}
+
+                <option value={{ temp.sessionID}}>{{ temp.sessionID }}</option>
+
+            {% endfor %}
+            {% endif %}
+        </select>
+        <input type="submit" value="submit"/>
+    </form>
+</body>
+</html>

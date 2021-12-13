@@ -1,0 +1,2 @@
+Templates are where most of web-page will be. .hbs files follow standard HTML syntax, with Ember
+specific functions such as routing or accessing model data called using {{}} syntax. 

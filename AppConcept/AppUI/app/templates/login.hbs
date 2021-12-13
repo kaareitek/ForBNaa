@@ -1,0 +1,24 @@
+{{page-title "Login"}}
+{{gen-layout}}
+{{footer-main}}
+
+<div id="popup" class="modal-bg">
+  <div class="modal">
+    {{login-component}}
+
+  </div>
+</div>
+
+<script>
+  // Get the modal
+  var modal = document.getElementById('popup');
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      window.history.go(-1); return false;
+    }
+  }
+
+</script>
+{{outlet}}

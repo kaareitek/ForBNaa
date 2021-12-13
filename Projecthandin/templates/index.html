@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form action="/user" method="post">
+        <select id="users" name="user">
+            {% if res %}
+            {% for temp in res %}
+
+                <option value={{ temp.userID }}>{{ temp.userID }}</option>
+
+            {% endfor %}
+            {% endif %}
+        </select>
+        <input type="submit" value="submit"/>
+    </form>
+</body>
+</html>

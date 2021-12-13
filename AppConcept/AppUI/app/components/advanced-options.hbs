@@ -1,0 +1,27 @@
+<div class="wrapper" id="edit">
+    <div class="wrap">Change account information</div>
+    <span id="one">
+    <form {{action 'createApp' on='submit' }} style="margin-left: 130px;">
+      <div class="field" style="width: 70%;">
+        {{input type="text" value=username}}
+        <label>Username</label>
+      </div>
+      <div class="field" style="width: 70%;">
+        {{input type="text" value=email}}
+        <label>Email</label>
+      </div>
+      <div class="field" style="width: 70%;">
+        {{input type="password" value=password}}
+        <label>Password</label>
+      </div>
+      <div class="field" style="width: 70%;">
+        {{input type="password" value=password}}
+        <label>Repeat password</label>
+      </div>
+      <div class="field" style="margin-top: 20px; margin-bottom: -10px; width: 75%;">
+        <input type="submit" value="Save changes">
+      </div>
+    </form>
+  </span>
+</div>
+{{yield}}

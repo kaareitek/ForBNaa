@@ -1,0 +1,48 @@
+<style>
+  body{
+    overflow: scroll;
+  }
+</style>
+
+<div class="wrapper" id="edit">
+  <!--Wrapper for image upload box-->
+  <span id="one">
+    <form {{action 'createApp' on='submit' }}>
+      <div class="field" id="editform">
+        {{input type="text" value=appname require=true}}
+        <label>App Name</label>
+      </div>
+      <div class="field" id="editform">
+        {{input type="text" value=appurl required=true}}
+        <label>App URL</label>
+      </div>
+      <div class="field" id="editform">
+        {{input type="text" value=appurl required=true}}
+        <label>Something</label>
+      </div>
+      <div class="field" style="margin-top: 20px; margin-bottom: -10px;">
+        <input type="submit" value="Save changes">
+      </div>
+    </form>
+  </span>
+  <span id="two">
+    <div class="upcontainer" id="column">
+      <div class="wrapper" style="width: 200px; height: 150px;">
+        <!--Wrapper for image upload box-->
+        <div class="image">
+          <img src="" style="text-indent: -10000px; z-index: 2;" id="uploadedimage">
+        </div>
+        <div class="content" style="z-index: 1;">
+          {{fa-icon "cloud-upload" class="icon"}}
+        </div>
+        <div id="cancel-btn" style="z-index: 3;">
+          {{fa-icon "times" class="cancel-btn"}}</div>
+        <div class="file-name" style="z-index: 3;"></div>
+      </div>
+      <button onclick="defaultBtnActive()" id="custom-btn" style="width: 200px;">Change the logo</button>
+      <input id="default-btn" type="file" hidden>
+    </div>
+  </span>
+</div>
+
+{{yield}}

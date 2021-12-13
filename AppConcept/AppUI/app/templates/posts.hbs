@@ -1,0 +1,9 @@
+<h1>Posts</h1>
+
+<ul>
+  {{#each @model as |post|}}
+  <li>
+    <LinkTo @route="post" @model={{post.id}}>{{post.title}}</LinkTo>
+  </li>
+  {{/each}}
+</ul>

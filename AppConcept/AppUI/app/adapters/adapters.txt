@@ -1,0 +1,7 @@
+The adapter handles how Ember talks to the back-end API.
+A series of different standard adapters exist. For this project, the back-end API is coded 
+to adhere to the standard RESTAdapter. Further customization has been added to specify the host,
+which authorization service to use, as well as appending the authorization header to the 
+API call.
+
+More on how to customize adapters can be found at https://guides.emberjs.com/release/models/customizing-adapters/

@@ -1,0 +1,63 @@
+{{page-title "Options"}}
+<div class="options-select">
+    <select id="option-types">
+        <option value="Radio Button">Radio Button</option>
+        <option value="Button">Button</option>
+    </select>
+    <button id="new">Add Option</button>
+    <button id="apply">Apply Changes</button>
+    <button id="save">Save Changes</button>
+</div>
+<div class="options-edit" id="options-edit"></div>
+<div class="options-display" id="options-display"></div>
+
+<script>
+    let divCounter = 0;
+    let createBtn = document.getElementById("new");
+    let editBtn = document.getElementById("apply");
+    let div;
+    let newRadio;
+    let newButton;
+    let option;
+    let editArea;
+    let saveBtn = document.getElementById("save");
+
+    createBtn.addEventListener("click", () => {
+        div = document.createElement("div");
+        div.className = "element-preview";
+        div.id = "element-preview" + divCounter.toString();
+        document.getElementById("options-display").appendChild(div);
+
+        option = document.getElementById("option-types");
+        if (option.value == "Radio Button") {
+            newRadio = document.createElement("input");
+            newRadio.id = "option-element" + divCounter.toString();
+            newRadio.type = "radio";
+            document.getElementById("element-preview" + divCounter.toString()).appendChild(newRadio);
+        }
+        if (option.value == "Button") {
+            newButton = document.createElement("button");
+            newButton.id = "option-element" + divCounter.toString();
+            document.getElementById("element-preview" + divCounter.toString()).appendChild(newButton);
+        }
+
+        editArea = document.createElement("textarea");
+        editArea.className = "edit-area"
+        editArea.id = "edit-area" + divCounter.toString();
+        editArea.value = document.getElementById("option-element" + divCounter.toString()).outerHTML;
+        document.getElementById("options-edit").appendChild(editArea);
+
+        divCounter++;
+    });
+
+    editBtn.addEventListener("click", () => {
+        let elementsCode = document.querySelectorAll("textarea");
+
+        elementsCode.forEach(updateElements);
+    });
+
+    function updateElements(item, index) {
+        let elementToUpdate = document.getElementById("option-element" + index);
+        elementToUpdate.outerHTML = item.value;
+    };
+</script>
